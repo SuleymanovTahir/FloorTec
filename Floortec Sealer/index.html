@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floortec Sealer</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: A4;
+        margin: 18pt;
+        @top-center {
+          content: element(header);
+        }
+        @bottom-center {
+          content: element(footer);
+        }
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9fafb;
+        color: #12332a;
+        font-size: 9.5pt;
+        line-height: 1.5;
+      }
+      .container {
+        width: 100%;
+        max-width: 842px;
+        margin: 0 auto;
+        padding: 8px 18px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+        border-radius: 10px;
+        min-height: calc(1123px - 36px);
+      }
+      .header {
+        width: 100%;
+        max-width: 842px;
+        margin: 0 auto;
+        padding: 8px 18px;
+        text-align: left;
+        position: running(header);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .header img {
+        max-width: 230px;
+        height: auto;
+      }
+      .header-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .header-text p {
+        margin: 0;
+        font-size: 13.5pt;
+        font-weight: 700;
+        color: #12332a;
+        letter-spacing: 0.7px;
+      }
+      .header-text .subtitle {
+        font-size: 10.5pt;
+        font-weight: 600;
+        color: #4fd1c5;
+        margin: 2px 0 0;
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+      }
+      .two-columns {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: flex-start;
+      }
+      .column {
+        width: 48%;
+        align-self: flex-start;
+      }
+      h2 {
+        font-size: 13.5pt;
+        color: #ffffff;
+        background-color: #12332a;
+        padding: 9px 13px;
+        margin: 9px 0;
+        border-radius: 6px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+      }
+      p,
+      ul,
+      li {
+        margin: 4px 0;
+        font-size: 9.5pt;
+        color: #12332a;
+      }
+      ul {
+        padding-left: 28px;
+        list-style: none;
+      }
+      ul li {
+        margin-bottom: 4px;
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      ul li::before {
+        content: "\f058";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        color: #12332a;
+        font-size: 11pt;
+        position: absolute;
+        left: -23px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin: 9px 0;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      th,
+      td {
+        padding: 9px;
+        text-align: center;
+        font-size: 8.5pt;
+        border-bottom: 0.5px solid #e2e8f0;
+      }
+      th {
+        background-color: #12332a;
+        color: #ffffff;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+      }
+      td {
+        background-color: #f7fafc;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+      .rep_p {
+        color: red;
+      }
+      .technical-table {
+        width: 100%;
+        margin: 9px auto;
+        font-size: 7.5pt;
+        border-collapse: collapse;
+        word-wrap: break-word;
+      }
+      .technical-table th,
+      .technical-table td {
+        text-align: center;
+        padding: 5px;
+        border: 0.5px solid #e2e8f0;
+        max-width: 0;
+        overflow-wrap: break-word;
+      }
+      .technical-table tr:nth-child(even) td {
+        background-color: #ffffff;
+      }
+      .technical-table tr:hover td {
+        background-color: #e6f0fa;
+        transition: background-color 0.2s;
+      }
+      .footer {
+        width: 100%;
+        max-width: 842px;
+        margin: 9px auto 0;
+        padding: 9px 18px;
+        background: #4fd1c5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 9.5pt;
+        color: #12332a;
+        position: running(footer);
+        border-radius: 6px;
+      }
+      .footer-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+        margin-bottom: 4px;
+      }
+      .footer-row:last-child {
+        margin-bottom: 0;
+      }
+      .footer img {
+        max-width: 110px;
+        height: auto;
+        margin-bottom: 4px;
+      }
+      .footer span {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 28px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+      }
+      .footer span::before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 13pt;
+        color: #12332a;
+      }
+      .footer span:nth-child(1)::before {
+        content: "\f095";
+      }
+      .footer span:nth-child(2)::before {
+        content: "\f017";
+      }
+      .footer span:nth-child(3)::before {
+        content: "\f3c5";
+      }
+      .footer span:nth-child(4)::before {
+        content: "\f0e0";
+      }
+      .instruction-paragraph {
+        margin: 7px 0;
+        padding: 9px;
+        background-color: #f7fafc;
+        border-left: 4px solid #4fd1c5;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+      }
+      .instruction-paragraph:hover {
+        background-color: #e6f0fa;
+      }
+      .instruction-paragraph strong {
+        color: #12332a;
+        font-weight: 600;
+      }
+      .p_center{
+          text-align: center;
+        }
+      @media print {
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        .container {
+          box-shadow: none;
+          margin: 0pt auto;
+          padding: 0px 18px;
+        }
+        .header {
+          background: none;
+        }
+        .footer {
+          background: #4fd1c5;
+        }
+        .container {
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+        .technical-table tr:hover td,
+        .instruction-paragraph:hover {
+          background-color: #f7fafc;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img
+          src="https://raw.githubusercontent.com/SuleymanovTahir/FloorTec/refs/heads/main/img/лого%20с%20r%20темно-зеленый.png"
+          alt="Логотип"
+        />
+        <div class="header-text instruction-paragraph">
+          <p>Floortec Sealer</p>
+          <p class="subtitle">Пропитка для беттоного пола</p>
+        </div>
+      </div>
+      <div class="two-columns">
+        <div class="column">
+          <h2>Описание</h2>
+          <p>
+            Пропитка для бетона «Floortec Sealer» - это раствор прозрачного
+            акрилового лака, который способствует защите от испарения влаги
+            свежеуложенного бетона и бетона с устроенными тонко- и
+            толстослойными цемент содержащими покрытиями.
+          </p>
+
+          <h2>Назначение</h2>
+          <p>
+            Пропитка для бетона «Floortec Sealer» применяется в качестве
+            защитного покрытия от испарения влаги на поверхности свеже­
+            уложенного бетона или бетона с тонко итолсто­ слойными цемент
+            содержащими покрытиями, с целью обеспечения полного протекания
+            реакции гидратации цемента с водой.
+          </p>
+
+          <h2>Преимущества</h2>
+          <ul>
+            <li>
+              Препятствует выделению пыли, повышает устойчивость к истиранию.
+            </li>
+            <li>
+              Препятствует образованию волостных трещин при усадке в течение
+              начальной фазы созревания бетона.
+            </li>
+            <li>
+              Увеличивает сопротивление поверхности к проникновению масел и
+              некоторых нефтепродуктов.
+            </li>
+            <li>Снижает потерю влажности свежего бетона на 90,0%.</li>
+            <li>Отличается быстрым и простым применением.</li>
+            <li>Эффективно защищает свежий бетон от потери влаги.</li>
+          </ul>
+
+          <h2>Упаковка, транспортировка и хранение</h2>
+          <p>
+            Пропитка для бетона «Floortec Sealer» упаковывается и храниться в
+            неоткрытых и оригинально-уплотненных ведрах по 15 кг (22 ведра на
+            поддоне). Необходимо беречь от мороза и высоких температур,защищать
+            от открытого огня .
+          </p>
+
+          <h2>Качество</h2>
+          <p>
+            В процессе производства пропитки для бетона «Floortec Sealer» в
+            лабораторных условиях постоянно осуществляется систематический
+            контроль качества выпускаемой продукции.
+          </p>
+
+          <h2>Гарантийный срок</h2>
+          <p>
+            Гарантийный срок материала составляет 12 месяцев с даты
+            изготовления. Дата изготовления приведена на упаковке. Производитель
+            гарантирует соблюдение указанных технических характеристик изделия
+            при условии выполнения инструкции по нанесению,однако не
+            предоставляет иные дополнительные гарантии в случае неправильной
+            обработки и применения
+          </p>
+        </div>
+        <div class="column">
+          <h2>Инструкция к применению</h2>
+          <h3>Подготовка основания</h3>
+          <p class="instruction-paragraph">
+            Перед нанесением пропитки для бетона «Floortec Sealer» поверхность
+            свежего бетона или бетона с тонко- и толстослойным покрытием
+            необходимо очистить от воды и грязи. Грязь, возникшая при резке
+            швов, также может быть причиной возникновения белых пятен на
+            поверхности, в случае если «Floortec Sealer» не полностью высохнет.
+          </p>
+          <h3>Нанесение</h3>
+          <p class="instruction-paragraph">
+            Пропитка для бетона «Floortec Sealer» наносится на свежий бетон и
+            бетон со свеже устроенным тонко- и толстослойным покрытием через 24
+            часа после их укладки. «Floortec Sealer» наносится велюровым
+            валиком, кистью или резиновым шпателем в количестве 0,1-0,2 кг/м².
+            Одного слоя достаточно для снижения гигроскопичности и запыленности,
+            и в тоже время для придания поверхности блестящего вида. При
+            нанесении дополнительных слоев поверх состава «Floortec Sealer»
+            рекомендуется провести тест совместимости новых слоев на пробной
+            поверхности.
+          </p>
+
+          <h2>Техника безопасности</h2>
+          <ul>
+            <li>
+              Во время работ с материалом в закрытом помещении обязательно
+              организуйте вентиляцию помещения.
+            </li>
+            <li>
+              Материал может вызвать раздражение кожи, поэтому рекомендуется
+              использовать индивидуальные средства защиты (очки, перчатки).
+            </li>
+            <li>
+              При работе с сухой смесью возникает опасность вдыхания пылевых
+              частиц, в связи с чем рекомендуется использовать защитный
+              противопылевой респиратор.
+            </li>
+            <li>
+              При попадании на слизистые оболочки или в глаза, немедленно
+              промойте большим количеством воды и обратитесь к врачу.
+            </li>
+          </ul>
+          <h2>Технические характеристики</h2>
+          <table class="technical-table">
+            <tr>
+              <th>Параметр</th>
+              <th>Значение</th>
+            </tr>
+            <tr>
+              <td>Плотность, кг/м³</td>
+              <td>920,0</td>
+            </tr>
+            <tr>
+              <td>Сухой остаток, % масс</td>
+              <td>17,1</td>
+            </tr>
+            <tr>
+              <td>Вязкость, с</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>Время высыхания</td>
+              <td>24 часа</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <p class="p_center">
+        <i
+          >Производитель не несет ответственности за последствия нарушений
+          технологии и указаний производителя, в том числе связанных с тем, что
+          потребитель не ознакомился с листами технической информации и
+          инструкциями по применению материалов.</i
+        >
+      </p>
+      <div class="footer">
+        <img
+          src="https://raw.githubusercontent.com/SuleymanovTahir/FloorTec/refs/heads/main/img/лого%20с%20r%20темно-зеленый.png"
+          alt="Логотип"
+        />
+        <div class="footer-row">
+          <span>8 800 080 34 33</span>
+          <span>09:00 - 19:00</span>
+        </div>
+        <div class="footer-row">
+          <span>Казахстан, г. Астана, мкр. Промзона 1</span>
+          <span>info@conteria.kz</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floortec ED P5 грунт эпокcидный</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: A4;
+        margin: 18pt;
+        @top-center {
+          content: element(header);
+        }
+        @bottom-center {
+          content: element(footer);
+        }
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9fafb;
+        color: #12332a;
+        font-size: 9.5pt;
+        line-height: 1.5;
+      }
+      .container {
+        width: 100%;
+        max-width: 842px;
+        margin: 0 auto;
+        padding: 8px 18px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+        border-radius: 10px;
+        min-height: calc(1123px - 36px);
+      }
+      .header {
+        width: 100%;
+        max-width: 842px;
+        margin: 0 auto;
+        padding: 8px 18px;
+        text-align: left;
+        position: running(header);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .header img {
+        max-width: 230px;
+        height: auto;
+      }
+      .header-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .header-text p {
+        margin: 0;
+        font-size: 13.5pt;
+        font-weight: 700;
+        color: #12332a;
+        letter-spacing: 0.7px;
+      }
+      .header-text .subtitle {
+        font-size: 10.5pt;
+        font-weight: 600;
+        color: #4fd1c5;
+        margin: 2px 0 0;
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+      }
+      .two-columns {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: flex-start;
+      }
+      .column {
+        width: 48%;
+        align-self: flex-start;
+      }
+      h2 {
+        font-size: 13.5pt;
+        color: #ffffff;
+        background-color: #12332a;
+        padding: 9px 13px;
+        margin: 9px 0;
+        border-radius: 6px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+      }
+      p,
+      ul,
+      li {
+        margin: 4px 0;
+        font-size: 9.5pt;
+        color: #12332a;
+      }
+      ul {
+        padding-left: 28px;
+        list-style: none;
+      }
+      ul li {
+        margin-bottom: 4px;
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      ul li::before {
+        content: "\f058";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        color: #12332a;
+        font-size: 11pt;
+        position: absolute;
+        left: -23px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin: 9px 0;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      th,
+      td {
+        padding: 9px;
+        text-align: center;
+        font-size: 8.5pt;
+        border-bottom: 0.5px solid #e2e8f0;
+      }
+      th {
+        background-color: #12332a;
+        color: #ffffff;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+      }
+      td {
+        background-color: #f7fafc;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+      .rep_p {
+        color: red;
+      }
+      .technical-table {
+        width: 100%;
+        margin: 9px auto;
+        font-size: 7.5pt;
+        border-collapse: collapse;
+        word-wrap: break-word;
+      }
+      .technical-table th,
+      .technical-table td {
+        text-align: center;
+        padding: 5px;
+        border: 0.5px solid #e2e8f0;
+        max-width: 0;
+        overflow-wrap: break-word;
+      }
+      .technical-table tr:nth-child(even) td {
+        background-color: #ffffff;
+      }
+      .technical-table tr:hover td {
+        background-color: #e6f0fa;
+        transition: background-color 0.2s;
+      }
+      .footer {
+        width: 100%;
+        max-width: 842px;
+        margin: 9px auto 0;
+        padding: 9px 18px;
+        background: #4fd1c5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 9.5pt;
+        color: #12332a;
+        position: running(footer);
+        border-radius: 6px;
+      }
+      .footer-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+        margin-bottom: 4px;
+      }
+      .footer-row:last-child {
+        margin-bottom: 0;
+      }
+      .footer img {
+        max-width: 110px;
+        height: auto;
+        margin-bottom: 4px;
+      }
+      .footer span {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 28px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+      }
+      .footer span::before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 13pt;
+        color: #12332a;
+      }
+      .footer span:nth-child(1)::before {
+        content: "\f095";
+      }
+      .footer span:nth-child(2)::before {
+        content: "\f017";
+      }
+      .footer span:nth-child(3)::before {
+        content: "\f3c5";
+      }
+      .footer span:nth-child(4)::before {
+        content: "\f0e0";
+      }
+      .instruction-paragraph {
+        margin: 7px 0;
+        padding: 9px;
+        background-color: #f7fafc;
+        border-left: 4px solid #4fd1c5;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+      }
+      .instruction-paragraph:hover {
+        background-color: #e6f0fa;
+      }
+      .instruction-paragraph strong {
+        color: #12332a;
+        font-weight: 600;
+      }
+      @media print {
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        .container {
+          box-shadow: none;
+          margin: 0pt auto;
+          padding: 0px 18px;
+        }
+        .header {
+          background: none;
+        }
+        .footer {
+          background: #4fd1c5;
+        }
+        .container {
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+        .technical-table tr:hover td,
+        .instruction-paragraph:hover {
+          background-color: #f7fafc;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img
+          src="https://raw.githubusercontent.com/SuleymanovTahir/FloorTec/refs/heads/main/img/лого%20с%20r%20темно-зеленый.png"
+          alt="Логотип"
+        />
+        <div class="header-text instruction-paragraph">
+          <p>FloorTec</p>
+          <p class="subtitle">Floortec ED P5 грунт эпокcидный</p>
+        </div>
+      </div>
+      <div class="two-columns">
+        <div class="column">
+          <h2>Описание</h2>
+          <p>
+            Универсальный эпоксидный состав применяется в качестве грунтовки
+            (праймера) под наливные эпоксидные и полиуретановые полы, на бетон.
+          </p>
+
+          <h2>Назначение и область применения</h2>
+          <p>
+            Универсальный эпоксидный состав применяется в качестве грунтовки
+            (праймера) под наливные эпоксидные и полиуретановые полы, на бетон.
+          </p>
+
+          <h2>Упаковка, срок хранения</h2>
+          <p>
+            Комплект из металлического ведра и канистры, общей массой
+            <strong>25 кг</strong> . Компонент А – 22,3кг, компонент Б – 2,7кг.
+            Гарантийный срок хранения в ненарушенной заводской упаковке – 6
+            месяцев при температуре от <strong>5 °С до +25 °С</strong>.
+          </p>
+
+          <h2>Преимущества применения состава</h2>
+          <ul>
+            <li>низкая вязкость;</li>
+            <li>
+              глубоко проникает в поры бетона и надёжно связывает последующие
+              слои покрытия;
+            </li>
+            <li>
+              повышает прочность слабых и пылящих поверхностей, предотвращает
+              осыпание;
+            </li>
+            <li>
+              запечатывает микропоры, снижает впитываемость и расход финишных
+              покрытий;
+            </li>
+            <li>удобство и простота нанесения;</li>
+            <li>набор прочности в кратчайший срок;</li>
+            <li>высокие показатели адгезии к основанию.</li>
+          </ul>
+
+          <h2>Инструкция по применению</h2>
+          <p class="instruction-paragraph">
+            <strong>Компонент А</strong> необходимо тщательно перемешать
+            (<strong>300–400</strong> об./мин) до полной однородности массы, в
+            течение <strong>1–3 мин</strong>, поднимая со дна осадок пигментов и
+            наполнителей. Обязательно поднять полностью осадок, чтобы избежать
+            снижения механических характеристик покрыти. Время перемешивания
+            может отличаться от указанного, в зависимости от вязкости материала
+            и наличия осадка. Рекомендуется использовать перемешивающий механизм
+            фрезерного типа обладающей мощностью (не менее 1 кВт),
+            низкооборотистую (до <strong>1500</strong> об./мин) дрель.
+          </p>
+          <p class="instruction-paragraph">
+            При частичном использовании компонентов из упаковки каждый из них
+            необходимо предварительно тщательно перемешать раздельно. Смешивание
+            следует производить строго в пропорциях, указанных в технических
+            характеристиках.
+          </p>
+          <p class="instruction-paragraph">
+            <strong>Компонент B</strong> следует добавить в ёмкость с
+            <strong>компонентом A</strong> и перемешивать полученную смесь до
+            получения полностью однородной массы в течение 2–3 минут, тщательно
+            обрабатывая стенки и дно тары.
+          </p>
+          <p class="instruction-paragraph">
+            Смешанный материал необходимо перелить в другую емкость и тщательно
+            перемешать в течение <strong>1</strong> минуты. Общее время
+            перемешивания не должно суммарно превышать 7 минут.
+            <i
+              >Несоблюдение данного требования может привести к образованию
+              дефектов, проявляющихся в виде зон с пониженной твёрдостью
+              покрытия.</i
+            >
+          </p>
+          <p class="instruction-paragraph">
+            <strong><i>Внимание!</i></strong> Значительное превышение времени и
+            скорости перемешивания компонентов и материала приводит к резкому
+            снижению жизнеспособности материала, поскольку при перемешивании
+            вязких сред выделяется тепло, которое очень медленно отводится через
+            стенки тары.
+          </p>
+          <p class="instruction-paragraph">
+            <strong><em>Внимание!</em></strong> Материал необходимо наносить
+            непосредственно после приготовления. Хранение состава в таре после
+            смешивания недопустимо.
+          </p>
+          <p class="instruction-paragraph">
+            <strong><i>Внимание!</i></strong> Недопустимо нанесение грунта и
+            всех видов покрытий на цементное молочко. Цементное молочко
+            (блестящий светлый слой на поверхности бетонных и цементно-песчаных
+            стяжек) часто образуется в процессе отверждения.
+          </p>
+          <h2>Расход материала</h2>
+          <p class="instruction-paragraph">
+            Грунт наносится меховым, велюровым
+            <i><strong>(не поролоновым)</strong></i> валиком, кистью, шпателем
+            или безвоздушным распылением с нижеуказанным расходом. Для
+            увеличения адгезии последующего слоя допускается свеженанесенный
+            грунт посыпать сухим кварцевым песком (расход
+            <strong>300–600</strong> г/м2, размер частиц
+            <strong>0,1–0,3</strong> мм).
+          </p>
+          <p class="instruction-paragraph">
+            Расход грунта варьируется в зависимости от показателя коэффициента
+            поглощения основания. В случае неоднородного впитывания допускается
+            нанесение второго слоя для выравнивания.
+          </p>
+          <p class="instruction-paragraph">
+            - <i>Первый слой:</i> 150–250 г/м2.
+          </p>
+          <p class="instruction-paragraph">
+            - <i>Второй слой:</i> 100–150 г/м2.
+          </p>
+          <h2>Требования</h2>
+          <p class="instruction-paragraph">
+            Загрунтованную поверхность необходимо надёжно защитить от влаги и
+            конденсата до момента его полного отверждения. Образование пузырей
+            указывает на наличие влаги (конденсат) или неравномерного
+            грунтования поверхности.
+          </p>
+        </div>
+        <div class="column">
+          <h2>Технические показатели</h2>
+          <table class="technical-table">
+            <tr>
+              <th>Наименование показателя</th>
+              <th>Обозначение НД на методы испытаний</th>
+              <th>Фактически полученные результаты</th>
+            </tr>
+            <tr>
+              <td>Внешний вид материала</td>
+              <td>-</td>
+              <td>коричневый низковязкая жидкость</td>
+            </tr>
+            <tr>
+              <td>Соотношение компонентов по массе, А:Б</td>
+              <td>-</td>
+              <td>8,2:1</td>
+            </tr>
+            <tr>
+              <td>
+                Время жизнеспособности при смешении с отвердителем, мин, не
+                менее
+              </td>
+              <td>-</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>Способ нанесения</td>
+              <td>-</td>
+              <td>Кисть/меховой валик/шпатель/безвоздушное распыление</td>
+            </tr>
+            <tr>
+              <td>Расход, кг/м²</td>
+              <td>-</td>
+              <td>0,15-0,4</td>
+            </tr>
+            <tr>
+              <td>Интервал перекрытия</td>
+              <td>-</td>
+              <td>
+                Последующий слой наносятся после полного отверждения предыдущего
+              </td>
+            </tr>
+          </table>
+          <table class="technical-table">
+            <tr>
+              <th>Наименование показателя</th>
+              <th>Обозначение НД на методы испытаний</th>
+              <th>Фактически полученные результаты</th>
+            </tr>
+            <tr>
+              <td>Цвет покрытия</td>
+              <td>ГОСТ 29319-92</td>
+              <td>Не нормируется</td>
+            </tr>
+            <tr>
+              <td>Внешний вид покрытия</td>
+              <td>ГОСТ 29319-92</td>
+              <td>
+                После высыхания краска образовала однородную, без кратеров, пор
+                и морщин поверхность
+              </td>
+            </tr>
+            <tr>
+              <td>Массовая доля нелетучих веществ, %</td>
+              <td>ГОСТ 31939-2012</td>
+              <td>87</td>
+            </tr>
+            <tr>
+              <td>
+                Условная вязкость при температуре 20℃ по вискозиметру типа
+                В3-246 (или В3-4), сек, не менее
+              </td>
+              <td>ГОСТ 8420-74</td>
+              <td>47</td>
+            </tr>
+            <tr>
+              <td>
+                Время высыхания до степени 3 при температуре 20℃, час, не более
+              </td>
+              <td>ГОСТ 19007-73</td>
+              <td>24</td>
+            </tr>
+            <tr>
+              <td>
+                Стойкость покрытия к статическому воздействию воды при
+                температуре 20℃, ч, не менее
+              </td>
+              <td>ГОСТ 9.403-80</td>
+              <td>
+                После выдержки в течении 10час.покрытие осталось без изменений
+              </td>
+            </tr>
+            <tr>
+              <td>Адгезия, баллы, не более</td>
+              <td>ГОСТ 31149-2002</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Температура самовоспламенения, ℃</td>
+              <td>ГОСТ 12.1.044-2018</td>
+              <td>370</td>
+            </tr>
+          </table>
+
+          <h2>Условия отверждения покрытия</h2>
+          <table>
+            <tr>
+              <th>Параметр</th>
+              <th>Значение</th>
+            </tr>
+            <tr>
+              <td>
+                Продолжительность высыхания пленки до степени 3, ч, не более,
+                при температуре: (20+2) °С
+              </td>
+              <td>24</td>
+            </tr>
+            <tr>
+              <td>
+                Продолжительность высыхания пленки до полной механической
+                нагрузки, ч, не более, при температуре: (20+2) °С
+              </td>
+              <td>72</td>
+            </tr>
+          </table>
+
+          <h2>Условия нанесения</h2>
+          <table>
+            <tr>
+              <th>Параметр</th>
+              <th>Значение</th>
+            </tr>
+            <tr>
+              <td>Температура основания, °С</td>
+              <td>От +5 до +25</td>
+            </tr>
+            <tr>
+              <td>Температура окружающей среды, °С</td>
+              <td>От +5 до +25</td>
+            </tr>
+            <tr>
+              <td>Влажность основания, %, не более</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Относительная влажность воздуха, %, не более</td>
+              <td>80</td>
+            </tr>
+          </table>
+
+          <h2>Ограничения</h2>
+          <p>
+            В случае хранения или транспортировки при отрицательных
+            температурах, перед применением материал следует выдержать в тёплом
+            помещении до достижения температуры не ниже +5 °C, после чего
+            тщательно перемешать до однородности массы.
+          </p>
+
+          <h2>Требования к основанию</h2>
+          <p>
+            Основание должно соответствовать требованиям
+            <strong>СП 29.13330.2011</strong> Полы,
+            <strong>СНиП 3.0403</strong> Изоляционные и отделочные работы.
+            Подготовка основания и принципы нанесения материала описаны в
+            инструкции «Общие указания по подготовке основания и нанесению
+            полимерных систем защиты поверхности пола». Основание должно быть
+            прочное (на сжатие не менее <strong>25 Н/мм2 (М 250)</strong>, на
+            отрыв не менее <strong>1,5 Н/мм2</strong>), чистое, ровное и сухое,
+            без масляных пятен, не содержать цементного молочка и снижающих
+            адгезию веществ, влажность основания – до <strong>4%</strong>.
+            Неровности и поры должны быть отремонтированы. Слабые и разрушенные
+            места должны быть удалены механически, например, дробеструйной
+            обработкой или фрезерованием.
+          </p>
+          <h2>Меры безопасности</h2>
+          <p>
+            При работе с материалом в закрытых помещениях необходимо обеспечить
+            эффективную вентиляцию. Запрещается использование открытого огня и
+            проведение сварочных работ в зоне нанесения. Материал может вызывать
+            раздражение кожи, поэтому при недостаточной вентиляции следует
+            применять средства индивидуальной защиты. При попадании в глаза или
+            на слизистые оболочки немедленно промыть большим количеством воды и
+            обратиться за медицинской помощью. .
+          </p>
+        </div>
+      </div>
+      <div class="footer">
+        <img
+          src="https://raw.githubusercontent.com/SuleymanovTahir/FloorTec/refs/heads/main/img/лого%20с%20r%20темно-зеленый.png"
+          alt="Логотип"
+        />
+        <div class="footer-row">
+          <span>8 800 080 34 33</span>
+          <span>09:00 - 19:00</span>
+        </div>
+        <div class="footer-row">
+          <span>Казахстан, г. Астана, мкр. Промзона 1</span>
+          <span>info@conteria.kz</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

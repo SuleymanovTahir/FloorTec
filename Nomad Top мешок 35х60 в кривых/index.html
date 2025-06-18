@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images to PDF with Proportions</title>
+  <style>
+    /* Стили для печати */
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .page {
+        page-break-after: always;
+        width: 350mm; /* Размер страницы: 350 мм */
+        height: 600mm; /* Размер страницы: 600 мм */
+        overflow: hidden;
+        margin: 0;
+      }
+      .page img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Сохраняет пропорции изображения */
+      }
+    }
+
+    /* Стили для отображения в браузере */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .page {
+      width: 350mm; /* 350 мм для отображения в браузере */
+      height: 600mm; /* 600 мм для отображения в браузере */
+
+    }
+    .page img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Сохраняет пропорции изображения */
+    }
+  </style>
+</head>
+<body>
+  <!-- Страница 1: Первое изображение -->
+  <div class="page">
+    <img src="./img/Nomad Top мешок 35х60 в кривых_page-0001.png" alt="Image 1">
+  </div>
+  
+  <!-- Страница 2: Второе изображение -->
+  <div class="page">
+    <img src="./img/Nomad Top мешок 35х60 в кривых_page-0002.jpg" alt="Image 2">
+  </div>
+
+  <script>
+    // JS для загрузки локальных изображений при клике
+    document.querySelectorAll('img').forEach((img, index) => {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*';
+      input.style.display = 'none';
+      document.body.appendChild(input);
+      
+      img.addEventListener('click', () => input.click());
+      input.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          img.src = URL.createObjectURL(file);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
