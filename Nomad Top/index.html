@@ -185,7 +185,7 @@
         max-width: 842px;
         margin: 9px auto 0;
         padding: 9px 18px;
-        background: #fff;
+        background: #f6e8e8;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -232,17 +232,34 @@
         font-size: 13pt;
         color: #07020f;
       }
-      .footer span:nth-child(1)::before {
-        content: "\f095";
+      .footer-row a{
+        text-decoration: none;
+        color: #12332a;
       }
-      .footer span:nth-child(2)::before {
-        content: "\f017";
+      .footer-row:nth-child(2) span:nth-child(1)::before {
+        content: "\f275"; /* Industry icon for manufacturer */
       }
-      .footer span:nth-child(3)::before {
-        content: "\f3c5";
+      .footer-row:nth-child(2) span:nth-child(2)::before {
+        content: "\f095"; /* Phone icon */
       }
-      .footer span:nth-child(4)::before {
-        content: "\f0e0";
+      .footer-row:nth-child(3) span:nth-child(1)::before {
+        content: "\f3c5"; /* Location pin icon */
+      }
+      .footer-row:nth-child(3) span:nth-child(2)::before {
+        content: "\f017"; /* Clock icon */
+      }
+      .footer-row:nth-child(4) span:nth-child(1)::before {
+        content: "\f0e0"; /* Envelope icon */
+      }
+      .footer-row:nth-child(4) span:nth-child(2)::before {
+        content: "\f0ac"; /* Globe icon for website */
+      }
+      .footer a {
+        color: #07020f;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
       }
       .instruction-paragraph {
         margin: 7px 0;
@@ -259,6 +276,10 @@
         color: #07020f;
         font-weight: 600;
       }
+      .p_center {
+        margin: 30px 0 11px;
+        text-align: center;
+      }
       @media print {
         body {
           margin: 0;
@@ -273,7 +294,7 @@
           background: none;
         }
         .footer {
-          background: #fff;
+          background: #f6e8e8;
         }
         .container {
           padding-top: 8px;
@@ -289,10 +310,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <img
-          src="./img/nomad top.png"
-          alt="Логотип"
-        />
+        <img src="./img/nomad top.png" alt="Логотип" />
         <div class="header-text">
           <h2 class="subtitle instruction-paragraph">
             Модифицированный корундом сухой однокомпонентный состав на цементной
@@ -597,18 +615,29 @@
           </p>
         </div>
       </div>
+      <p class="p_center">
+        <i
+          >Производитель не несет ответственности за последствия нарушений
+          технологии и указаний производителя, в том числе связанных с тем, что
+          потребитель не ознакомился с листами технической информации и
+          инструкциями по применению материалов.</i
+        >
+      </p>
       <div class="footer">
-        <img
-          src="./img/logo_nomad_top в длину.png"
-          alt="Логотип"
-        />
+        <img src="./img/logo_nomad_top в длину.png" alt="Логотип" />
         <div class="footer-row">
+          <span>Производитель: TOO "Conteria CA"</span>
           <span>8 800 080 34 33</span>
+        </div>
+        <div class="footer-row">
+          <span>Казахстан, г. Астана, Промзона, 6/2</span>
           <span>09:00 - 19:00</span>
         </div>
         <div class="footer-row">
-          <span>Казахстан, г. Астана, мкр. Промзона 1</span>
           <span>info@conteria.kz</span>
+          <span
+            ><a href="https://conteria.kz" target="_blank">conteria.kz</a></span
+          >
         </div>
       </div>
     </div>

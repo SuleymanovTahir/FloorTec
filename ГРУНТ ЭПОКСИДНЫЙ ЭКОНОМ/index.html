@@ -119,7 +119,7 @@
         content: "\f058";
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
-        color: #12332a;
+        color: #4fd1c5;
         font-size: 11pt;
         position: absolute;
         left: -23px;
@@ -203,11 +203,15 @@
         width: 100%;
         margin-bottom: 4px;
       }
+      .footer-row a{
+        text-decoration: none;
+        color: #12332a;
+      }
       .footer-row:last-child {
         margin-bottom: 0;
       }
       .footer img {
-        max-width: 110px;
+        max-width: 210px;
         height: auto;
         margin-bottom: 4px;
       }
@@ -229,17 +233,23 @@
         font-size: 13pt;
         color: #12332a;
       }
-      .footer span:nth-child(1)::before {
-        content: "\f095";
+      .footer-row:nth-child(2) span:nth-child(1)::before {
+        content: "\f275"; /* Industry icon for manufacturer */
       }
-      .footer span:nth-child(2)::before {
-        content: "\f017";
+      .footer-row:nth-child(2) span:nth-child(2)::before {
+        content: "\f095"; /* Phone icon */
       }
-      .footer span:nth-child(3)::before {
-        content: "\f3c5";
+      .footer-row:nth-child(3) span:nth-child(1)::before {
+        content: "\f3c5"; /* Location pin icon */
       }
-      .footer span:nth-child(4)::before {
-        content: "\f0e0";
+      .footer-row:nth-child(3) span:nth-child(2)::before {
+        content: "\f017"; /* Clock icon */
+      }
+      .footer-row:nth-child(4) span:nth-child(1)::before {
+        content: "\f0e0"; /* Envelope icon */
+      }
+      .footer-row:nth-child(4) span:nth-child(2)::before {
+        content: "\f0ac"; /* Globe icon for website */
       }
       .instruction-paragraph {
         margin: 7px 0;
@@ -255,6 +265,10 @@
       .instruction-paragraph strong {
         color: #12332a;
         font-weight: 600;
+      }
+      .p_center {
+        margin: 30px 0 11px;
+        text-align: center;
       }
       @media print {
         body {
@@ -287,12 +301,12 @@
     <div class="container">
       <div class="header">
         <img
-          src="https://raw.githubusercontent.com/SuleymanovTahir/FloorTec/refs/heads/main/img/лого%20с%20r%20темно-зеленый.png"
+          src="https://raw.githubusercontent.com/SuleymanovTahir/FloorTec/refs/heads/main/КОМПАУНД%20ЭПОКСИД/img/лого%20с%20r%20темно-зеленый.png"
           alt="Логотип"
         />
         <div class="header-text instruction-paragraph">
           <p>FloorTec</p>
-          <p class="subtitle">Floortec ED P5 грунт эпокcидный</p>
+          <p class="subtitle">ED P5 грунт эпокcидный</p>
         </div>
       </div>
       <div class="two-columns">
@@ -605,18 +619,32 @@
           </p>
         </div>
       </div>
+      <p class="p_center">
+        <i
+          >Производитель не несет ответственности за последствия нарушений
+          технологии и указаний производителя, в том числе связанных с тем, что
+          потребитель не ознакомился с листами технической информации и
+          инструкциями по применению материалов.</i
+        >
+      </p>
       <div class="footer">
         <img
-          src="https://raw.githubusercontent.com/SuleymanovTahir/FloorTec/refs/heads/main/img/лого%20с%20r%20темно-зеленый.png"
+          src="https://raw.githubusercontent.com/SuleymanovTahir/FloorTec/refs/heads/main/КОМПАУНД%20ЭПОКСИД/img/лого%20с%20r%20темно-зеленый.png"
           alt="Логотип"
         />
         <div class="footer-row">
+          <span>Производитель: TOO "Conteria CA"</span>
           <span>8 800 080 34 33</span>
+        </div>
+        <div class="footer-row">
+          <span>Казахстан, г. Астана, Промзона, 6/2</span>
           <span>09:00 - 19:00</span>
         </div>
         <div class="footer-row">
-          <span>Казахстан, г. Астана, мкр. Промзона 1</span>
           <span>info@conteria.kz</span>
+          <span
+            ><a href="https://conteria.kz" target="_blank">conteria.kz</a></span
+          >
         </div>
       </div>
     </div>
