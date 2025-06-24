@@ -1,0 +1,13 @@
+class GameCharacter:
+    def __init__(self, name, stamina, secret_code):
+        self.name = name             # публичный атрибут
+        self._stamina = stamina      # защищённый атрибут
+        self.__secret_code = secret_code  # приватный атрибут
+
+    def reveal_secret(self):
+        return f"Secret code: {self.__secret_code}"
+
+
+hero = GameCharacter('Petr', 'super_speed', '2345')
+
+print(hero.name)
