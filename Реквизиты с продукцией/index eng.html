@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реквизиты Conteria CA (eng)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+            color: #1f2937;
+            margin: 0 auto;
+            padding: 0;
+            width: 210mm;
+            height: 297mm;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 180mm;
+            padding: 15mm 10mm;
+            box-sizing: border-box;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 10mm;
+        }
+        header .logo-container {
+            display: inline-block;
+            padding: 5mm;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.05);
+        }
+        header img {
+            width: 60mm;
+            vertical-align: middle;
+        }
+        .details {
+            background: #ffffff;
+            padding: 10mm;
+            border-radius: 8px;
+            box-shadow: 0 4mm 8mm rgba(0, 0, 0, 0.05);
+            margin-bottom: 15mm;
+            border-left: 3mm solid #1e3a8a;
+            font-size: 9pt;
+            line-height: 1.5;
+        }
+        .details i {
+            color: #1e3a8a;
+            margin-right: 6mm;
+            font-size: 12pt;
+        }
+        .details .info-group {
+            display: flex;
+            align-items: center;
+            margin: 4mm 0;
+        }
+        .details .info-group i {
+            min-width: 15mm;
+        }
+        .details .info-group p {
+            margin: 0;
+            flex: 1;
+        }
+        .bank-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2mm;
+            align-items: center;
+            font-size: 8pt;
+        }
+        .bank-details .fas {
+            margin-right: 6mm;
+        }
+        h2 {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #1e3a8a;
+            text-align: center;
+            margin-bottom: 10mm;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60mm, 1fr));
+            gap: 12mm;
+            justify-content: center;
+            padding: 0;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            text-align: center;
+            padding: 8mm;
+            box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-2mm);
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4mm;
+            margin-bottom: 6mm;
+            object-fit: cover;
+        }
+        .card h3 {
+            color: #1f2937;
+            margin: 4mm 0;
+            font-size: 11pt;
+            font-weight: 600;
+        }
+        .card p {
+            color: #4b5563;
+            font-size: 8pt;
+            padding: 0 2mm;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="https://raw.githubusercontent.com/SuleymanovTahir/FloorTec/6705ca07f7c6d0e16d296867fcc19cbf21aca2ba/Реквизиты%20с%20продукцией/img/Conteria-Black_Logo_.svg" alt="Conteria CA Logo">
+            </div>
+        </header>
+        <h2>Details</h2>
+        <div class="details">
+            <div class="info-group"><i class="fas fa-map-marker-alt"></i><p>Actual address: Kazakhstan, Astana, E810 2/21, Phoenix Residential Complex</p></div>
+            <div class="info-group"><i class="fas fa-warehouse"></i><p>Warehouse: Astana, Zhetigen St. 3</p></div>
+            <div class="info-group"><i class="fas fa-building"></i><p>Legal address: Kazakhstan, Baikonyr District, Astana, Taiburyl St. 23/1</p></div>
+            <div class="info-group"><i class="fas fa-id-card"></i><p>BIN: 210540020550</p></div>
+            <div class="info-group"><i class="fas fa-university"></i><p class="bank-details">Account (KZT): KZ 668562203123710938 (JSC "Bank Center Credit", BIC KCJBKZKX, KBE 17)</p></div>
+            <div class="info-group"><i class="fas fa-envelope"></i><p>E-mail: info@conteria.kz</p></div>
+            <div class="info-group"><i class="fas fa-user-tie"></i><p>Director: Rakhmat Kurulai Rakhmatkyzy</p></div>
+        </div>
+        <h2>Products</h2>
+        <div class="products">
+            <div class="card">
+                <img src="https://github.com/SuleymanovTahir/FloorTec/blob/main/Реквизиты%20с%20продукцией/img/Floortec%20ED%20C200.jpg?raw=true" alt="Floortec ED C200">
+                <h3>Floortec ED C200</h3>
+                <p>Two-component epoxy coating for seamless poured floors on concrete indoors.</p>
+            </div>
+            <div class="card">
+                <img src="https://github.com/SuleymanovTahir/FloorTec/blob/main/Реквизиты%20с%20продукцией/img/Floortec%20ED%20P5.jpg?raw=true" alt="Floortec ED P5">
+                <h3>Floortec ED P5</h3>
+                <p>Epoxy primer for preparing substrates for poured floors.</p>
+            </div>
+            <div class="card">
+                <img src="https://github.com/SuleymanovTahir/FloorTec/blob/main/Реквизиты%20с%20продукцией/img/Flortec%20Sealer.png?raw=true" alt="Flortec Sealer">
+                <h3>Flortec Sealer</h3>
+                <p>Transparent acrylic varnish for protecting fresh concrete from moisture loss.</p>
+            </div>
+            <div class="card">
+                <img src="https://github.com/SuleymanovTahir/FloorTec/blob/main/Реквизиты%20с%20продукцией/img/Nomad%20Top.png?raw=true" alt="Nomad Top">
+                <h3>Nomad Top</h3>
+                <p>Dry mix for strengthening the surface of freshly laid concrete.</p>
+            </div>
+            <div class="card">
+                <img src="https://github.com/SuleymanovTahir/FloorTec/blob/main/Реквизиты%20с%20продукцией/img/zeton.png?raw=true" alt="Zeton">
+                <h3>Zeton</h3>
+                <p>Concrete impregnation that enhances adhesion and prevents dusting.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
